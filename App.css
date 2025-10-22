@@ -1,0 +1,131 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif, Geneva, Tahoma;
+}
+
+/* Centered Page Layout */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  animation: gradientBG 10s ease infinite alternate;
+}
+
+/* Containers: Welcome, Login, Signup */
+.welcome-container, .login-container {
+  max-width: 400px;
+  margin: 120px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #ffffff, #e0f7ff);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-container:hover, .login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+}
+
+/* Buttons with Gradient + Pulse Glow */
+.welcome-container button, .login-container button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #357abd, #4a90e2);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: buttonPulse 2s infinite;
+}
+
+.welcome-container button:hover, .login-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(70,150,250,0.7);
+}
+
+/* Input fields with focus glow */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #357abd;
+  box-shadow: 0 0 12px rgba(52,152,219,0.4);
+  outline: none;
+}
+
+/* Box (Success or other boxes) */
+.box {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+}
+
+/* Success Icon: Bounce + Rotate + Glow */
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  animation: bounce 1s ease-in-out infinite alternate,
+             rotate 4s linear infinite,
+             iconGlow 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+}
+
+/* Animations */
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes iconGlow {
+  0% { filter: drop-shadow(0 0 8px rgba(52,152,219,0.4)); }
+  50% { filter: drop-shadow(0 0 20px rgba(52,152,219,0.8)); }
+  100% { filter: drop-shadow(0 0 8px rgba(52,152,219,0.4)); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 8px rgba(70,150,250,0.4); }
+  50% { box-shadow: 0 0 20px rgba(70,150,250,0.7); }
+  100% { box-shadow: 0 0 8px rgba(70,150,250,0.4); }
+}
+
+@keyframes gradientBG {
+  0% { background: linear-gradient(135deg, #4a90e2, #357abd); }
+  50% { background: linear-gradient(135deg, #357abd, #4a90e2); }
+  100% { background: linear-gradient(135deg, #4a90e2, #357abd); }
+}
